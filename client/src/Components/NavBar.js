@@ -10,8 +10,8 @@ export default class NavBar extends Component {
     const { activeItem } = this.state
 
     return (
-      <Segment inverted>
-        <Menu inverted pointing secondary>
+      <Segment className='nav-bar' inverted>
+        <Menu  inverted  secondary>
           <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
           <Menu.Item
             name='sign up'
@@ -24,6 +24,7 @@ export default class NavBar extends Component {
             onClick={this.handleItemClick}
           />
         </Menu>
+        <img className='logo' src='./bettership_logo.png' alt='logo' />
       </Segment>
     )
   }
