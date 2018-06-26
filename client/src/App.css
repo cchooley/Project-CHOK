@@ -35,3 +35,10 @@ html {
 .about-title {
   font-size: 4vw;
 }
+
+.nav-bar {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
+  width: 100% !important;
+}
