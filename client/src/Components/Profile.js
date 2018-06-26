@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Header, Image, Segment, Button } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 export default class Profile extends Component {
   render() {
@@ -12,7 +13,7 @@ export default class Profile extends Component {
         <Header as='h3'>
         School: Wheat Ridge High School
         </Header>
-        <Button size='massive'>Apply to Internship</Button>
+        <Link to='/apply'><Button size='massive'>Apply to Internship</Button></Link>
       </Segment>
     );
   }
