@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Form } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 const options = [
   { key: '1', text: 'Music', value: 'music' },
@@ -28,7 +29,7 @@ class ProfileForm extends Component {
         <Form.Input fluid label='Last name' placeholder='Last name' />
         <Form.Input fluid label='School name' placeholder='School name' />
         <Form.Select fluid label='Interests' options={options} placeholder='Interests' />
-        <Form.Button>Submit</Form.Button>
+        <Link to='/profile'><Form.Button>Submit</Form.Button></Link>
       </Form>
     )
   }

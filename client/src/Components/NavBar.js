@@ -2,15 +2,11 @@ import React, { Component } from "react";
 import { Menu, Segment } from "semantic-ui-react";
 import { Button, Header, Image, Modal } from "semantic-ui-react";
 import { Checkbox, Form } from "semantic-ui-react";
+import { Link } from 'react-router-dom'
 
 export default class NavBar extends Component {
-  state = { activeItem: "home" };
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
   render() {
-    const { activeItem } = this.state;
-
+    
     return <Segment className="nav-bar" inverted>
         <Menu inverted secondary>
           <Modal trigger={<button className="ui button" role="button">
@@ -31,7 +27,7 @@ export default class NavBar extends Component {
                   <Form.Field>
                     <Checkbox label="I agree to the Terms and Conditions" />
                   </Form.Field>
-                  <Button type="submit">Submit</Button>
+                  <Link to='/newProfile'><Button type="submit">Submit</Button></Link>
                 </Form>
               </Modal.Description>
             </Modal.Content>
@@ -51,7 +47,7 @@ export default class NavBar extends Component {
                     <label>Last Name</label>
                     <input placeholder="Last Name" />
                   </Form.Field>
-                  <Button type="submit">Submit</Button>
+                  <Link to='/profile'><Button type="submit">Submit</Button></Link>
                 </Form>
               </Modal.Description>
             </Modal.Content>
