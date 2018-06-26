@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Menu, Segment } from 'semantic-ui-react'
+import { Button, Header, Image, Modal } from 'semantic-ui-react'
 
 export default class NavBar extends Component {
   state = { activeItem: 'home' }
@@ -12,17 +13,28 @@ export default class NavBar extends Component {
     return (
       <Segment className='nav-bar' inverted>
         <Menu  inverted  secondary>
-          <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
-          <Menu.Item
-            name='sign up'
-            active={activeItem === 'sign up'}
-            onClick={this.handleItemClick}
-          />
-          <Menu.Item
-            name='login'
-            active={activeItem === 'login'}
-            onClick={this.handleItemClick}
-          />
+          <Modal trigger={<button className="ui button" role="button">Sign Up</button>}>
+            <Modal.Header>Select a Photo</Modal.Header>
+            <Modal.Content image>
+              <Image wrapped size='medium' src='/images/avatar/large/rachel.png' />
+              <Modal.Description>
+                <Header>Default Profile Image</Header>
+                <p>We've found the following gravatar image associated with your e-mail address.</p>
+                <p>Is it okay to use this photo?</p>
+              </Modal.Description>
+            </Modal.Content>
+          </Modal>
+          <Modal trigger={<button className="ui button" role="button">Login</button>}>
+            <Modal.Header>Select a Photo</Modal.Header>
+            <Modal.Content image>
+              <Image wrapped size='medium' src='/images/avatar/large/rachel.png' />
+              <Modal.Description>
+                <Header>Default Profile Image</Header>
+                <p>We've found the following gravatar image associated with your e-mail address.</p>
+                <p>Is it okay to use this photo?</p>
+              </Modal.Description>
+            </Modal.Content>
+          </Modal>
         </Menu>
         <img className='main-logo'  src='./assets/bettership.png' alt='logo' />
       </Segment>
