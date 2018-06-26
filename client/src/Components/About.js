@@ -10,7 +10,7 @@ export default class About extends Component {
             <img className='hero-img' src='./assets/intern.jpg' />
             <div className='centered'>
             <h1 className='about-title' >Bettership - A Better Internship Experience </h1>
-            <p>Internships are a great opportunity for high school students to learn and develope professional skills.  The problem is, they can be really hard to find and track the progress of.  Here at Bettership our goal is to streamline the process for students, schools, and the companies hiring your students.  </p>
+            <p>Internships are a great opportunity for high school students to learn and develop professional skills.  The problem is, they can be really hard to find and track the progress of.  Here at Bettership our goal is to streamline the process for students, schools, and the companies hiring your students.  </p>
             </div>
         </div>
             

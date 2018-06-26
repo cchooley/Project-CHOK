@@ -9,11 +9,11 @@ export default class NavBar extends Component {
     
     return <Segment className="nav-bar" inverted>
         <Menu inverted secondary>
-          <Modal trigger={<button className="ui button" role="button">
+          <Modal closeIcon trigger={<button className="ui button" role="button">
                 Sign Up
               </button>}>
             <Modal.Header>Sign Up</Modal.Header>
-            <Modal.Content image>
+            <Modal.Content image >
               <Modal.Description>
                 <Form>
                   <Form.Field>
@@ -23,6 +23,14 @@ export default class NavBar extends Component {
                   <Form.Field>
                     <label>Last Name</label>
                     <input placeholder="Last Name" />
+                  </Form.Field>
+                  <Form.Field>
+                    <label>E-mail</label>
+                    <input placeholder="E-mail" />
+                  </Form.Field>
+                  <Form.Field>
+                    <label>Password</label>
+                    <input placeholder="Password" />
                   </Form.Field>
                   <Form.Field>
                     <Checkbox label="I agree to the Terms and Conditions" />
@@ -32,7 +40,7 @@ export default class NavBar extends Component {
               </Modal.Description>
             </Modal.Content>
           </Modal>
-          <Modal trigger={<button className="ui button" role="button">
+          <Modal closeIcon trigger={<button className="ui button" role="button">
                 Login
               </button>}>
             <Modal.Header>Login</Modal.Header>
@@ -40,12 +48,12 @@ export default class NavBar extends Component {
               <Modal.Description>
                 <Form>
                   <Form.Field>
-                    <label>First Name</label>
-                    <input placeholder="First Name" />
+                    <label>E-mail</label>
+                    <input placeholder="E-mail" />
                   </Form.Field>
                   <Form.Field>
-                    <label>Last Name</label>
-                    <input placeholder="Last Name" />
+                    <label>Password</label>
+                    <input placeholder="Password" />
                   </Form.Field>
                   <Link to='/profile'><Button type="submit">Submit</Button></Link>
                 </Form>
