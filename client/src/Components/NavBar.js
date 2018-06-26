@@ -24,7 +24,7 @@ export default class NavBar extends Component {
             onClick={this.handleItemClick}
           />
         </Menu>
-        <img className='logo' src='./bettership_logo.png' alt='logo' />
+        <img className='main-logo'  src='./assets/bettership.png' alt='logo' />
       </Segment>
     )
   }
