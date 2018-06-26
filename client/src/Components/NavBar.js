@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom'
 export default class NavBar extends Component {
   render() {
     
-    return <Segment className="nav-bar" inverted>
-        <Menu inverted secondary>
+    return <Segment inverted>
+        <Menu className="nav-bar" inverted secondary>
           <Modal trigger={<button className="ui button" role="button">
                 Sign Up
               </button>}>
@@ -27,7 +27,9 @@ export default class NavBar extends Component {
                   <Form.Field>
                     <Checkbox label="I agree to the Terms and Conditions" />
                   </Form.Field>
-                  <Link to='/newProfile'><Button type="submit">Submit</Button></Link>
+                  <Link to="/newProfile">
+                    <Button type="submit">Submit</Button>
+                  </Link>
                 </Form>
               </Modal.Description>
             </Modal.Content>
@@ -47,13 +49,15 @@ export default class NavBar extends Component {
                     <label>Last Name</label>
                     <input placeholder="Last Name" />
                   </Form.Field>
-                  <Link to='/profile'><Button type="submit">Submit</Button></Link>
+                  <Link to="/profile">
+                    <Button type="submit">Submit</Button>
+                  </Link>
                 </Form>
               </Modal.Description>
             </Modal.Content>
           </Modal>
         </Menu>
-        <img className="main-logo" src="./assets/bettership.png" alt="logo" />
+        <img className="main-logo" src="./assets/bettership2.png" alt="logo" />
       </Segment>;
   }
 }
