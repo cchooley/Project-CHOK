@@ -5,7 +5,8 @@ import Profile from './Components/Profile'
 import ProfileForm from './Components/ProfileForm';
 import AppForm from './Components/AppForm';
 import Footer from './Components/Footer';
-import { BrowserRouter, Router, Route, Switch } from 'react-router-dom'
+import InternshipList from './Components/InternshipList';
+import { BrowserRouter, Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 const userURL = 'https://chok-database.herokuapp.com/students'
@@ -29,7 +30,6 @@ class App extends Component {
     fetch(userURL)
     .then(response => response.json())
     .then(data => {
-      console.log('users:', data)
         this.setState({
           userData: data.students
         })
@@ -40,7 +40,6 @@ class App extends Component {
     fetch(internshipURL)
     .then(response => response.json())
     .then(data => {
-      console.log('internships:', data)
       this.setState({
         internshipData: data.internships
       })
@@ -57,6 +56,7 @@ class App extends Component {
             <Route exact path='/' component={About} />
             <Route exact path='/profile' component={() => <Profile data={this.state.userData} />} />
             <Route exact path='/newProfile' component={ProfileForm} />
+            <Route exact path='/internships' component={() => <InternshipList data={this.state.internshipData} />} />
             <Route exact path='/apply' component={AppForm} />
           </Switch>
           </div>
