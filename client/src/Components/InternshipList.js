@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Card, Image, Icon, Divider } from 'semantic-ui-react'
 
 export default class InternshipList extends Component {
 
- 
   render() {
-    // console.log(this.props.data)
+  
     const internships = this.props.data.map(internship => {
       return (
         <Card link id='card' key={internship.id}>
@@ -39,26 +38,23 @@ export default class InternshipList extends Component {
             <a href={internship.website}>{internship.website}</a>
             </Card.Meta>
           </Card.Content>
-            <Card.Content extra color='green'>
-              <Link to='/apply'>
-                  <div  className='ui two buttons' >
-                    <Button color='blue' >
-                      Apply
-                    </Button>
-                  </div>
-              </Link>
-            </Card.Content>
+          <Card.Content extra color='green'>
+            <Link to='/apply'>
+              <div  className='ui two buttons' >
+              <Button color='blue'>Apply</Button>
+              </div>
+            </Link>
+          </Card.Content>
         </Card>
-        
-      )
-      
+      ) 
     })
+    
     return (
       <div>
         <Card.Group itemsPerRow={1}>
           {internships}
         </Card.Group>
       </div>
-    );
+    )
   }
 }
