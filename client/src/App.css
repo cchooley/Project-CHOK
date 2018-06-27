@@ -45,7 +45,7 @@ html {
 
 #card {
   box-shadow: 3px 6px 50px gray;
-  margin: 2% 4%;
+  margin: 2% 8%;
 }
 
 #card:hover {
@@ -58,4 +58,11 @@ html {
 
 #apply-button-container {
   color: white;
+}
+
+#sponsor-logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }

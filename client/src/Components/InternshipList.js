@@ -6,10 +6,10 @@ export default class InternshipList extends Component {
 
  
   render() {
-    console.log(this.props.data)
+    // console.log(this.props.data)
     const internships = this.props.data.map(internship => {
       return (
-        <Card link id='card'>
+        <Card link id='card' key={internship.id}>
           <Card.Content>
             <Image floated='right' size='small' src={internship.logo} />
             <Card.Header>{internship.name}</Card.Header>
@@ -23,7 +23,7 @@ export default class InternshipList extends Component {
           </Card.Content>
           <Card.Content>
             <Card.Meta >
-            <Icon.Group size='medium'>
+            <Icon.Group size='large'>
               <Icon name='marker' />
               <Icon corner  />
             </Icon.Group>
@@ -32,7 +32,7 @@ export default class InternshipList extends Component {
           </Card.Content>
           <Card.Content as='a' >
             <Card.Meta >
-            <Icon.Group size='medium'>
+            <Icon.Group size='large'>
               <Icon name='linkify' />
               <Icon corner  />
             </Icon.Group>
