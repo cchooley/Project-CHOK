@@ -29,6 +29,7 @@ class App extends Component {
     fetch(userURL)
     .then(response => response.json())
     .then(data => {
+      console.log('users:', data)
         this.setState({
           userData: data.students
         })
@@ -39,6 +40,7 @@ class App extends Component {
     fetch(internshipURL)
     .then(response => response.json())
     .then(data => {
+      console.log('internships:', data)
       this.setState({
         internshipData: data.internships
       })

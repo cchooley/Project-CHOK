@@ -47,6 +47,8 @@ export default class NavBar extends Component {
 
   render() {
     
+
+
     return <Segment inverted>
         <Menu className="nav-bar" inverted secondary>
           <Link to='/newProfile'><Button>Sign Up</Button></Link>
@@ -70,6 +72,7 @@ export default class NavBar extends Component {
                          value={this.state.loginPassword} 
                          onChange={this.handleChange}  
                          placeholder="Password" />
+
                   </Form.Field>
                     <Button onClick={this.handleSubmit} type="submit">Submit</Button>
                 </Form>
