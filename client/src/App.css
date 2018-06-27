@@ -3,14 +3,11 @@ html {
 }
 
 .logo {
-<<<<<<< HEAD
   max-width: 8%;
-=======
   max-width: 10%;
-  display: flex ;
+  display: flex;
   flex-wrap: nowrap;
-  justify-content: space-evenly ;
->>>>>>> 2b49aab19ecbfae7a7028b7dec61cda2e51ad40f
+  justify-content: space-evenly;
 }
 
 .main-logo {
@@ -19,7 +16,6 @@ html {
 
 .hero-img {
   max-width: 100%;
-  
 }
 
 .about-container {
@@ -50,7 +46,6 @@ html {
   width: 100% !important;
 }
 
-<<<<<<< HEAD
 #card {
   box-shadow: 3px 6px 50px gray;
   margin: 2% 6%;
@@ -66,5 +61,3 @@ html {
   justify-content: space-around;
   align-items: center;
 }
-=======
->>>>>>> 2b49aab19ecbfae7a7028b7dec61cda2e51ad40f
