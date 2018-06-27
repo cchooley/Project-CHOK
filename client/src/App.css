@@ -46,22 +46,3 @@ html {
   width: 100% !important;
 }
 
-<<<<<<< HEAD
-=======
-#card {
-  box-shadow: 3px 6px 50px gray;
-  margin: 2% 4%;
-}
-
-#card:hover {
-  box-shadow: 8px 16px 50px gray;
-}
-
-#apply-button {
-  background-color: rgba(0, 249, 0, 0.45);
-}
-
-#apply-button-container {
-  color: white;
-}
->>>>>>> c1bb05409fca639953a1ccf752ddac4106939495
