@@ -67,4 +67,6 @@ class App extends Component {
   }
 }
 
+// use ternary to decide when to display Profile component
+
 export default App;
