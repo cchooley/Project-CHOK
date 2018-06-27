@@ -16,9 +16,9 @@ export default class About extends Component {
             
         <Message>
           <h2>Sponsor Companies</h2>
-          <img className='logo' src='./assets/art-museum.jpg' alt='Art Museum' />
+          <img className='logo' src='./assets/DAM.png' alt='Art Museum' />
           <img className='logo' src='./assets/BP.png' alt='BP' />
-          <img className='logo' src='./assets/fb-logo.png' alt='FB' />
+          <img className='logo' src='./assets/chrome.png' alt='FB' />
           <img className='logo' src='./assets/childrensHos.png' alt='Childrens Hospital' />
           <img className='logo' src='./assets/red-cross.png' alt='Red Cross' />
         </Message>

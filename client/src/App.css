@@ -4,6 +4,9 @@ html {
 
 .logo {
   max-width: 10%;
+  display: flex ;
+  flex-wrap: nowrap;
+  justify-content: space-evenly ;
 }
 
 .main-logo {
@@ -42,3 +45,4 @@ html {
   justify-content: flex-end !important;
   width: 100% !important;
 }
+
