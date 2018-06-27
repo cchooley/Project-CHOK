@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Item, Segment } from 'semantic-ui-react'
+import { Segment } from 'semantic-ui-react'
 import { Message } from 'semantic-ui-react'
 
 export default class About extends Component {

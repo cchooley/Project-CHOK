@@ -3,7 +3,7 @@ html {
 }
 
 .logo {
-  max-width: 10%;
+  max-width: 8%;
 }
 
 .main-logo {
@@ -45,19 +45,11 @@ html {
 
 #card {
   box-shadow: 3px 6px 50px gray;
-  margin: 2% 8%;
+  margin: 2% 6%;
 }
 
 #card:hover {
   box-shadow: 8px 16px 50px gray;
-}
-
-#apply-button {
-  background-color: rgba(0, 249, 0, 0.45);
-}
-
-#apply-button-container {
-  color: white;
 }
 
 #sponsor-logo-container {

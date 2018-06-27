@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import { Button, Card, Image, Segment, Accordion, Form, Item, Icon, Divider } from 'semantic-ui-react'
+import { Button, Card, Image, Icon, Divider } from 'semantic-ui-react'
 
 export default class InternshipList extends Component {
 
@@ -39,9 +39,9 @@ export default class InternshipList extends Component {
             <a href={internship.website}>{internship.website}</a>
             </Card.Meta>
           </Card.Content>
-            <Card.Content extra color='green' id='apply-button-container'>
+            <Card.Content extra color='green'>
               <Link to='/apply'>
-                  <div  className='ui two buttons' id='apply-button'>
+                  <div  className='ui two buttons' >
                     <Button color='blue' >
                       Apply
                     </Button>

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Segment } from "semantic-ui-react";
-import { Button, Header, Image, Modal } from "semantic-ui-react";
-import { Checkbox, Form } from "semantic-ui-react";
+import { Button, Modal, Form, Menu, Segment } from "semantic-ui-react";
 import { Link } from 'react-router-dom'
 
 const loginURL = 'https://chok-database.herokuapp.com/auth/login'
