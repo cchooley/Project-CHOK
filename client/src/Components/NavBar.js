@@ -4,65 +4,77 @@ import { Button, Header, Image, Modal } from "semantic-ui-react";
 import { Checkbox, Form } from "semantic-ui-react";
 import { Link } from 'react-router-dom'
 
+const loginURL = 'https://chok-database.herokuapp.com/auth/login'
+
 export default class NavBar extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      loginEmail: '',
+      loginPassword: ''
+    }
+  }
+
+  handleChange = (event) => {
+    const value = event.target.value
+    const key = event.target.name
+    this.setState({
+      [key]: value
+    })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    const body = JSON.stringify({
+      email: this.state.loginEmail,
+      password: this.state.loginPassword
+    })
+    	fetch(loginURL, {
+        method: "POST",
+        headers: new Headers ({"content-type": "application/json"}),
+        body: body
+      })
+      .then(response => response.json())
+      .then(result =>	{
+        if(result.token) {
+          window.localStorage.token = result.token
+          window.location.href = '/profile'
+        } else {
+            alert(result.error)
+        }
+      })
+  }
+
   render() {
     
 
 
     return <Segment inverted>
         <Menu className="nav-bar" inverted secondary>
-          <Modal trigger={<button className="ui button" role="button">
-
-                Sign Up
-              </button>}>
-            <Modal.Header>Sign Up</Modal.Header>
-            <Modal.Content image >
-              <Modal.Description>
-                <Form>
-                  <Form.Field>
-                    <label>First Name</label>
-                    <input placeholder="First Name" />
-                  </Form.Field>
-                  <Form.Field>
-                    <label>Last Name</label>
-                    <input placeholder="Last Name" />
-                  </Form.Field>
-                  <Form.Field>
-                    <label>E-mail</label>
-                    <input placeholder="E-mail" />
-                  </Form.Field>
-                  <Form.Field>
-                    <label>Password</label>
-                    <input placeholder="Password" />
-                  </Form.Field>
-                  <Form.Field>
-                    <Checkbox label="I agree to the Terms and Conditions" />
-                  </Form.Field>
-                  <Link to="/newProfile">
-                    <Button type="submit">Submit</Button>
-                  </Link>
-                </Form>
-              </Modal.Description>
-            </Modal.Content>
-          </Modal>
-          <Modal closeIcon trigger={<button className="ui button" role="button">
+          <Link to='/newProfile'><Button>Sign Up</Button></Link>
+          <Modal trigger={<Button className="ui button" role="button">
                 Login
-              </button>}>
+              </Button>}>
             <Modal.Header>Login</Modal.Header>
             <Modal.Content image>
               <Modal.Description>
-                <Form>
+                <Form >
                   <Form.Field>
-                    <label>E-mail</label>
-                    <input placeholder="E-mail" />
+                    <label>Email</label>
+                    <input name='loginEmail' 
+                           value={this.state.loginEmail} 
+                           onChange={this.handleChange} 
+                           placeholder="Email" />
                   </Form.Field>
                   <Form.Field>
                     <label>Password</label>
-                    <input placeholder="Password" />
+                  <input name='loginPassword' 
+                         value={this.state.loginPassword} 
+                         onChange={this.handleChange}  
+                         placeholder="Password" />
+
                   </Form.Field>
-                  <Link to="/profile">
-                    <Button type="submit">Submit</Button>
-                  </Link>
+                    <Button onClick={this.handleSubmit} type="submit">Submit</Button>
                 </Form>
               </Modal.Description>
             </Modal.Content>
