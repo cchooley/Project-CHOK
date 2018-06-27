@@ -43,7 +43,7 @@ class ProfileForm extends Component {
       })
       .then(response => response.json())
       .then(response =>	{
-        window.location.href = `/profile/${response.id}`
+        window.location.href = `/profile/id=${response.id}`
         console.log(response)
       })
   }
