@@ -35,7 +35,7 @@ export default class InternshipList extends Component {
               <Icon name='linkify' />
               <Icon corner  />
             </Icon.Group>
-            <a href={internship.website}>{internship.website}</a>
+            <a target='_blank' href={internship.website}>{internship.website}</a>
             </Card.Meta>
           </Card.Content>
           <Card.Content extra color='green'>
@@ -48,7 +48,7 @@ export default class InternshipList extends Component {
         </Card>
       ) 
     })
-    
+
     return (
       <div>
         <Card.Group itemsPerRow={1}>
