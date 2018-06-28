@@ -6,7 +6,7 @@ import ProfileForm from './Components/ProfileForm'
 import AppForm from './Components/AppForm'
 import Footer from './Components/Footer'
 import InternshipList from './Components/InternshipList'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import './App.css'
 
 const userURL = 'https://chok-database.herokuapp.com/students'
@@ -25,7 +25,9 @@ class App extends Component {
       password: '',
       interest: '',
       hours: 0,
-      userId: ''
+      userId: '',
+      signedUp: false,
+      loggedIn: false
     }
   }
 
@@ -60,10 +62,11 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         this.setState({
-          userID: response.student.id
+          userID: response.student.id,
+          signedUp: !this.state.signedUp
         })
-        console.log(this.state.userID)
       })
+      .then(this.getUsers)
   }
 
   getUsers = () => {
@@ -96,7 +99,14 @@ class App extends Component {
             <Route exact path='/' component={About} />
             <Route exact path='/newProfile' component={() => 
               <ProfileForm  handleChange={this.handleChange} 
-                            handleSubmit={this.handleSubmit}  />} />
+                            handleSubmit={this.handleSubmit}
+                            name={this.state.name}
+                            picture={this.state.picture}
+                            school={this.state.school}
+                            email={this.state.email}
+                            password={this.state.password}
+                            interest={this.state.interest}
+                            signedUp={this.state.signedUp}  />} />
             <Route exact path='/internships' component={() => 
               <InternshipList data={this.state.internshipData} />} />
             <Route exact path='/profile' component={() => 
