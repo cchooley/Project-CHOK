@@ -13,6 +13,10 @@ export default class NavBar extends Component {
     }
   }
 
+  // function to decide which buttons to render in nav bar
+  // if route is '/' render sign up and login
+  // any other route render just logout
+
   handleChange = (event) => {
     const value = event.target.value
     const key = event.target.name

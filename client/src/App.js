@@ -23,7 +23,6 @@ class App extends Component {
       school: '',
       email: '',
       password: '',
-      interest: '',
       hours: 0,
       userId: '',
       signedUp: false,
@@ -55,7 +54,6 @@ class App extends Component {
         school: this.state.school,
         email: this.state.email,
         password: this.state.password,
-        interests: this.state.interest,
         hours: this.state.hours
       })
     })
@@ -105,7 +103,6 @@ class App extends Component {
                             school={this.state.school}
                             email={this.state.email}
                             password={this.state.password}
-                            interest={this.state.interest}
                             signedUp={this.state.signedUp}  />} />
             <Route exact path='/internships' component={() => 
               <InternshipList data={this.state.internshipData} />} />
