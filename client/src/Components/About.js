@@ -17,11 +17,11 @@ export default class About extends Component {
         <Message >
           <h2 >Sponsor Companies</h2>
           <div id='sponsor-logo-container' >
-            <img className='logo' src='./assets/DAM.png' alt='Art Museum' />
+            <img className='logo1' src='./assets/DAM.png' alt='Art Museum' />
             <img className='logo' src='./assets/BP.png' alt='BP' />
-            <img className='logo' src='./assets/chrome.png' alt='FB' />
-            <img className='logo' src='./assets/childrensHos.png' alt='Childrens Hospital' />
-            <img className='logo' src='./assets/red-cross.png' alt='Red Cross' />
+            <img className='logo3' src='./assets/chrome.png' alt='FB' />
+            <img className='logo4' src='./assets/childrensHos.png' alt='Childrens Hospital' />
+            <img className='logo5' src='./assets/red-cross.png' alt='Red Cross' />
           </div>
         </Message>
       </Segment>

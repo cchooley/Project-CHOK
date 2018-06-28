@@ -11,7 +11,8 @@ html {
 }
 
 .main-logo {
-  max-width: 40%;
+  max-width: 50%;
+  margin-left: 4%;
 }
 
 .hero-img {
@@ -23,6 +24,7 @@ html {
   text-align: center;
   color: white;
   font-family: 'Montserrat', sans-serif;
+  letter-spacing: .5px;
 }
 
 .centered {
@@ -60,4 +62,21 @@ html {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+}
+
+.logo1 {
+  max-width: 21%;
+}
+
+.logo3 {
+  max-width: 6%;
+}
+
+
+.logo4 {
+  max-width: 16%;
+}
+
+.logo5 {
+  max-width: 16%;
 }
