@@ -49,7 +49,8 @@ export default class NavBar extends Component {
       <Segment inverted>
         <Menu className="nav-bar" inverted secondary>
           <Link to='/newProfile'><Button>Sign Up</Button></Link>
-          <Modal trigger={<Button className="ui button" role="button">Login</Button>}>
+          <Link to='/'><Button>Logout</Button></Link>
+          <Modal trigger={<Button className="ui-button" role="button">Login</Button>}>
             <Modal.Header>Login</Modal.Header>
               <Modal.Content image>
                 <Modal.Description>

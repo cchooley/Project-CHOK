@@ -1,5 +1,6 @@
-html {
+.App {
   font-family: 'Montserrat', sans-serif;
+  margin-bottom: 10%;
 }
 
 .logo {
@@ -79,4 +80,18 @@ html {
 
 .logo5 {
   max-width: 16%;
+}
+
+.black-footer {
+  bottom: 0;
+  margin-bottom: 0;
+  
+  left: 0;
+  right: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.ui-button {
+  height: 23%;
 }
