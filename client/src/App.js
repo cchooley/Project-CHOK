@@ -18,12 +18,6 @@ class App extends Component {
     this.state = {
       userData: [],
       internshipData: [],
-      name: '',
-      picture: '',
-      school: '',
-      email: '',
-      password: '',
-      hours: 0,
       userId: '',
       signedUp: false,
       loggedIn: false
@@ -35,36 +29,21 @@ class App extends Component {
     this.getInternships()
   }
 
-  handleChange = (event) => {
-    const value = event.target.value
-    const key = event.target.name
-    this.setState({
-      [key]: value
-    })
-  }
-
-  handleSubmit = (event) => {
-    event.preventDefault()
+  handleSubmit = (profileData) => {
+    
     fetch(userURL, {
       method: "POST",
       headers: new Headers({ "content-type": "application/json" }),
-      body: JSON.stringify({
-        name: this.state.name,
-        picture: this.state.picture,
-        school: this.state.school,
-        email: this.state.email,
-        password: this.state.password,
-        hours: this.state.hours
-      })
+      body: JSON.stringify(profileData)
     })
       .then(response => response.json())
       .then(response => {
+        console.log(response)
         this.setState({
           userID: response.student.id,
           signedUp: !this.state.signedUp
         })
       })
-      .then(this.getUsers)
   }
 
   getUsers = () => {
@@ -97,14 +76,8 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={About} />
             <Route exact path='/newProfile' component={() => 
-              <ProfileForm  handleChange={this.handleChange} 
-                            handleSubmit={this.handleSubmit}
-                            name={this.state.name}
-                            picture={this.state.picture}
-                            school={this.state.school}
-                            email={this.state.email}
-                            password={this.state.password}
-                            signedUp={this.state.signedUp}  />} />
+              <ProfileForm  handleSubmit={this.handleSubmit}
+              signedUp={this.state.signedUp} />} />
             <Route exact path='/internships' component={() => 
               <InternshipList data={this.state.internshipData} />} />
             <Route exact path='/profile' component={() => 

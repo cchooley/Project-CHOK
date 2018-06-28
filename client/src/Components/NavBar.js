@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Button, Modal, Form, Menu, Segment } from "semantic-ui-react"
+import Login from './Login';
 import { Link } from 'react-router-dom'
 
 const loginURL = 'https://chok-database.herokuapp.com/auth/login'
@@ -9,13 +10,19 @@ export default class NavBar extends Component {
     super(props)
     this.state = {
       loginEmail: '',
-      loginPassword: ''
+      loginPassword: '',
+      home: true
     }
   }
 
-  // function to decide which buttons to render in nav bar
-  // if route is '/' render sign up and login
-  // any other route render just logout
+changeButtons = () => {
+  const location = window.location.pathname.split('/')
+  if(location !== '/') {
+    this.setState({
+      home: !this.state.home
+    })
+  }
+}
 
   handleChange = (event) => {
     const value = event.target.value
@@ -48,36 +55,19 @@ export default class NavBar extends Component {
   }
 
   render() {
-    
+    const home = this.state.home
     return ( 
       <Segment inverted>
         <Menu className="nav-bar" inverted secondary>
+          {home ?
+          <div>
           <Link to='/newProfile'><Button>Sign Up</Button></Link>
-          <Link to='/'><Button>Logout</Button></Link>
-          <Modal trigger={<Button className="ui-button" role="button">Login</Button>}>
-            <Modal.Header>Login</Modal.Header>
-              <Modal.Content image>
-                <Modal.Description>
-                  <Form >
-                    <Form.Field>
-                      <label>Email</label>
-                      <input  name='loginEmail' 
-                              value={this.state.loginEmail} 
-                              onChange={this.handleChange} 
-                              placeholder="Email" />
-                    </Form.Field>
-                    <Form.Field>
-                      <label>Password</label>
-                      <input  name='loginPassword' 
-                              value={this.state.loginPassword} 
-                              onChange={this.handleChange}  
-                              placeholder="Password" />
-                    </Form.Field>
-                    <Button onClick={this.handleSubmit} type="submit">Submit</Button>
-                  </Form>
-                </Modal.Description>
-              </Modal.Content>
-            </Modal>
+            <Login  loginEmail={this.state.loginEmail}
+                    loginPassword={this.state.loginPassword}
+                    handleChange={this.handleChange}
+                    handleSubmit={this.state.handleSubmit} />
+          </div> :
+          <Link to='/'><Button>Logout</Button></Link> }
           </Menu>
           <img className="main-logo" src="./assets/bettership2.png" alt="logo" />
         </Segment>
