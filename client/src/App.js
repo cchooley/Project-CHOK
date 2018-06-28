@@ -90,6 +90,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="body">
         <BrowserRouter>
         <div>
           <NavBar data={this.state.userData} />
@@ -113,6 +114,7 @@ class App extends Component {
           </Switch>
           </div>
         </BrowserRouter>
+        </div>
         <Footer />
       </div>
     )
