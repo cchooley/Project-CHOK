@@ -51,25 +51,37 @@ export default class NavBar extends Component {
     })
   }
 
+  logOut = () => {
+    delete window.localStorage.token
+    window.location.href = '/'
+  }
+
   render() {
     if(this.state.loggedIn) {
       return <Redirect to='/profile'/>
     }
 
+    const token = window.localStorage.token
+
     return ( 
-      <Segment inverted>
-        <Menu className="nav-bar" inverted secondary>
-          <div>
-          <Link to='/newProfile'><Button>Sign Up</Button></Link>
-            <Login  loginEmail={this.state.loginEmail}
-                    loginPassword={this.state.loginPassword}
-                    handleChange={this.handleChange}
-                    handleSubmit={this.handleSubmit} />
-          </div> 
-          <Link to='/'><Button>Logout</Button></Link> 
-          </Menu>
-          <img className="main-logo" src="./assets/bettership2.png" alt="logo" />
-        </Segment>
+            <Segment inverted>
+              <Menu className="nav-bar" inverted secondary>
+                {!token ? (
+                  <div>
+                    <Link to='/newProfile'><Button>Sign Up</Button></Link>
+                      <Login  loginEmail={this.state.loginEmail}
+                              loginPassword={this.state.loginPassword}
+                              handleChange={this.handleChange}
+                              handleSubmit={this.handleSubmit} />
+                  </div>
+                ) : ( 
+                  <div>
+                    <Link to='/'><Button onClick={this.logOut}>Logout</Button></Link> 
+                  </div>
+                )} 
+              </Menu>
+              <img className="main-logo" src="./assets/bettership2.png" alt="logo" />
+            </Segment>
     )
   }
 }
