@@ -40,13 +40,13 @@ export default class InternshipList extends Component {
             <a target='_blank' href={internship.website}>{internship.website}</a>
             </Card.Meta>
           </Card.Content>
-          <Card.Content extra color='green'>
+          {/* <Card.Content extra color='green'>
             <Link to='/apply'>
               <div  className='ui two buttons' >
               <Button name={internship.id} color='blue'>Apply</Button>
               </div>
             </Link>
-          </Card.Content>
+          </Card.Content> */}
         </Card>
       ) 
     })
