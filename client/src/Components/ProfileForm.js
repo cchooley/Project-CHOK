@@ -22,8 +22,6 @@ class ProfileForm extends Component {
 
   captureData = (event) => {
     event.preventDefault()
-    
-    
       const profileData = {
         name: this.state.name,
         picture: this.state.picture,

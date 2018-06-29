@@ -29,8 +29,13 @@ class App extends Component {
     this.getInternships()
   }
 
+  updateUserID = (userId) => {
+    this.setState({
+      userId
+    })
+  }
+
   handleSubmit = (profileData) => {
-    
     fetch(userURL, {
       method: "POST",
       headers: new Headers({ "content-type": "application/json" }),
@@ -38,9 +43,11 @@ class App extends Component {
     })
       .then(response => response.json())
       .then(response => {
-        console.log(response)
+        let users = this.state.userData
+        users.push(response.student)
         this.setState({
-          userID: response.student.id,
+          userData: users,
+          userId: response.student.id,
           signedUp: !this.state.signedUp
         })
       })
@@ -72,7 +79,8 @@ class App extends Component {
         <div className="body">
         <BrowserRouter>
         <div>
-          <NavBar data={this.state.userData} />
+          <NavBar data={this.state.userData}
+                  updateUserID={this.updateUserID} />
           <Switch>
             <Route exact path='/' component={About} />
             <Route exact path='/newProfile' component={() => 

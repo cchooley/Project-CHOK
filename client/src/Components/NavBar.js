@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Button, Modal, Form, Menu, Segment } from "semantic-ui-react"
 import Login from './Login';
 import { Link } from 'react-router-dom'
+import jwtDecode from 'jwt-decode'
 
 const loginURL = 'https://chok-database.herokuapp.com/auth/login'
 
@@ -47,6 +48,8 @@ changeButtons = () => {
     .then(result =>	{
       if(result.token) {
         window.localStorage.token = result.token
+        let decodedToken = jwtDecode(result.token)
+        this.props.updateUserID(decodedToken.userId)
         window.location.href = '/profile'
       } else {
           alert(result.error)

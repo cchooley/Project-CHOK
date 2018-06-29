@@ -2,7 +2,17 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Card, Image, Icon, Divider } from 'semantic-ui-react'
 
+const userURL = 'https://chok-database.herokuapp.com/students'
+
 export default class InternshipList extends Component {
+  state = {
+    internship_id: ''
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    
+  }
 
   render() {
   
@@ -41,7 +51,7 @@ export default class InternshipList extends Component {
           <Card.Content extra color='green'>
             <Link to='/apply'>
               <div  className='ui two buttons' >
-              <Button color='blue'>Apply</Button>
+              <Button key={internship.id} color='blue'>Apply</Button>
               </div>
             </Link>
           </Card.Content>
