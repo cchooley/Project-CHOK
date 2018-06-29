@@ -86,7 +86,8 @@ class App extends Component {
               <ProfileForm  handleSubmit={this.handleSubmit}
               signedUp={this.state.signedUp} />} />
             <Route exact path='/internships' component={() => 
-              <InternshipList data={this.state.internshipData} />} />
+              <InternshipList data={this.state.internshipData}
+                              userId={this.state.userId} />} />
             <Route exact path='/profile' component={() => 
               <Profile  data={this.state.userData} 
                         userId={this.state.userId} />} />
