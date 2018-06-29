@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Button, Modal, Form, Menu, Segment } from "semantic-ui-react"
+import { Button, Menu, Segment } from "semantic-ui-react"
 import Login from './Login';
 import { Link, Redirect } from 'react-router-dom'
 import jwtDecode from 'jwt-decode'

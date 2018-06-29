@@ -12,7 +12,7 @@ export default class AppForm extends Component {
   handleChange = (e, { value }) => this.setState({ value })
   
   render() {
-    const { value } = this.state
+    // const { value } = this.state
     return (
       <Segment>
         <Form>

@@ -6,7 +6,7 @@ import ProfileForm from './Components/ProfileForm'
 import AppForm from './Components/AppForm'
 import Footer from './Components/Footer'
 import InternshipList from './Components/InternshipList'
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css'
 
 const userURL = 'https://chok-database.herokuapp.com/students'

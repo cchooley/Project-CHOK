@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal, Form, Menu, Segment } from "semantic-ui-react"
+import { Button, Modal, Form, } from "semantic-ui-react"
 
 const Login = (props) => {
   return (

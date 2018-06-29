@@ -6,7 +6,7 @@ export default class Profile extends Component {
 
   render() {
     console.log(this.props)
-    let profile = this.props.data.filter(student => student.id == this.props.userId)
+    let profile = this.props.data.filter(student => student.id === this.props.userId)
     if(profile.length) {
       profile = profile[0]
     }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Segment } from 'semantic-ui-react'
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 class ProfileForm extends Component {
   state = {
