@@ -68,7 +68,7 @@ class ProfileForm extends Component {
                     fluid label='Password' 
                     placeholder='Password'
                     value={this.state.password} />
-        <Form.Button onClick={this.captureData} >Submit</Form.Button>=
+        <Form.Button onClick={this.captureData} >Submit</Form.Button>
       </Form>
       </Segment>
     )
