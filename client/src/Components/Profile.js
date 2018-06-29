@@ -12,11 +12,12 @@ export default class Profile extends Component {
     }
     
     return (
-      <Segment>
+      <Segment id='profile-card'>
         <Image src={profile.picture} size='medium' />
         <h1>{profile.name}</h1>
+        <h4>{profile.email}</h4>
         <h4>{profile.school}</h4>
-        <Link to='/internships'><Button size='massive'>View Available Internship</Button></Link>
+        <Link to='/internships'><Button className='internButton' size='massive'>View Available Internship</Button></Link>
       </Segment>
     );
   }

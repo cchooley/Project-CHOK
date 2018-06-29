@@ -92,3 +92,19 @@
   right: 0;
   width: 100%;
 }
+
+#profile-card {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h4 {
+  margin: 0px;
+  padding-bottom: 5px;
+}
+
+.internButton {
+  margin: 6px;
+}
