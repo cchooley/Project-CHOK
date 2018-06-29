@@ -7,7 +7,9 @@ import AppForm from './Components/AppForm'
 import Footer from './Components/Footer'
 import InternshipList from './Components/InternshipList'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import jwtDecode from 'jwt-decode'
 import './App.css'
+
 
 const userURL = 'https://chok-database.herokuapp.com/students'
 const internshipURL = 'https://chok-database.herokuapp.com/internships'
@@ -41,12 +43,15 @@ class App extends Component {
       body: JSON.stringify(profileData)
     })
       .then(response => response.json())
-      .then(response => {
+      .then(result => {
+        console.log(result);
+        window.localStorage.token = result.token
+        let decodedToken = jwtDecode(result.token)
         let users = this.state.userData
-        users.push(response.student)
+        users.push(result.student)
+        this.updateUserID(decodedToken.userId)
         this.setState({
           userData: users,
-          userId: response.student.id,
           signedUp: !this.state.signedUp
         })
       })

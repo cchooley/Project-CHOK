@@ -29,7 +29,7 @@ class ProfileForm extends Component {
         email: this.state.email,
         password: this.state.password,
         hours: this.state.hours,
-        internship_id: 0
+        internship_id: null
       }
       this.props.handleSubmit(profileData)
   }
