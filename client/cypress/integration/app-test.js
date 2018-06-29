@@ -1,0 +1,16 @@
+describe('Bettership', function () {
+    it('Should pass all tests', function () {
+        cy.visit('/')
+        cy.get('.main-logo').should('be.visible')
+        cy.get('button').last().should('have.text', 'Login')
+        cy.get('button').first().should('have.text', 'Sign Up')
+        cy.get('.about-container').should('be.visible')
+        cy.get('.hero-img').should('be.visible')
+        cy.get('#sponsor-logo-container').children().should('have.length', 5)        
+        cy.get('.black-footer').should('be.visible')
+        cy.get('.black-footer').should('have.text', '© Bettership, LLC. 2018')
+        cy.get('button').last().click()
+        cy.get('.dimmable').should('be.visible')
+        cy.get('.modal').children().should('have.length', 2)
+    })
+})
