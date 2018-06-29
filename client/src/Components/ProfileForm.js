@@ -29,7 +29,7 @@ class ProfileForm extends Component {
         email: this.state.email,
         password: this.state.password,
         hours: this.state.hours,
-        internship_id: 1
+        internship_id: 0
       }
       this.props.handleSubmit(profileData)
   }
@@ -65,6 +65,7 @@ class ProfileForm extends Component {
                     onChange={this.handleChange} 
                     fluid label='Password' 
                     placeholder='Password'
+                    type='password'
                     value={this.state.password} />
         <Form.Button onClick={this.captureData} >Submit</Form.Button>
       </Form>

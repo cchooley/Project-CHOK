@@ -20,7 +20,8 @@ const Login = (props) => {
               <input name='loginPassword'
                 value={props.loginPassword}
                 onChange={props.handleChange}
-                placeholder="Password" />
+                placeholder="Password"
+                type='password' />
             </Form.Field>
             <Button onClick={props.handleSubmit} type="submit">Submit</Button>
           </Form>

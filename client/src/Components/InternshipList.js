@@ -9,7 +9,7 @@ export default class InternshipList extends Component {
   constructor(props) {
     super(props)
     this.state ={
-      internship_id: '',
+      internship_id: ''
 
     }
   }
