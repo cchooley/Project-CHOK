@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, Segment, Button } from 'semantic-ui-react'
+import { Image, Segment, Button, Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 export default class Profile extends Component {
@@ -16,7 +16,7 @@ export default class Profile extends Component {
         <Image src={profile.picture} size='medium' />
         <h1>{profile.name}</h1>
         <h4>{profile.school}</h4>
-        <Link to='/internships'><Button size='massive'>View Available Internships</Button></Link>
+        <Link to='/internships'><Button size='massive'>View Available Internship</Button></Link>
       </Segment>
     );
   }

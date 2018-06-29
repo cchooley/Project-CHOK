@@ -84,9 +84,7 @@ class App extends Component {
         <BrowserRouter>
         <div>
           <NavBar data={this.state.userData}
-                  updateUserID={this.updateUserID}
-                  data={this.state.userData} 
-                  userId={this.state.userId}  />
+                  updateUserID={this.updateUserID} />
           <Switch>
             <Route exact path='/' component={About} />
             <Route exact path='/newProfile' component={() => 
@@ -98,7 +96,7 @@ class App extends Component {
             <Route exact path='/profile' component={() => 
               <Profile  data={this.state.userData} 
                         userId={this.state.userId} />} />
-            <Route exact path='/apply' component={AppForm} />
+            {/* <Route exact path='/apply' component={AppForm} /> */}
           </Switch>
           </div>
         </BrowserRouter>

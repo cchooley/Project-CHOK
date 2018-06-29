@@ -46,7 +46,6 @@ export default class NavBar extends Component {
         this.setState({
           loggedIn: !this.state.loggedIn
         })
-        window.location.href = '/profile' 
       } else {
           alert(result.error)
       }
@@ -59,9 +58,14 @@ export default class NavBar extends Component {
   }
 
   render() {
-    // if(this.state.loggedIn) {
-    //   return <Redirect to='/profile'/>
-    // }
+    if(this.state.loggedIn) {
+      return (
+      <div>
+        <NavBar />
+        <Redirect to='/profile' />
+      </div>
+      )
+    }      
 
     const token = window.localStorage.token
 
