@@ -79,7 +79,9 @@ class App extends Component {
         <BrowserRouter>
         <div>
           <NavBar data={this.state.userData}
-                  updateUserID={this.updateUserID} />
+                  updateUserID={this.updateUserID}
+                  data={this.state.userData} 
+                  userId={this.state.userId}  />
           <Switch>
             <Route exact path='/' component={About} />
             <Route exact path='/newProfile' component={() => 

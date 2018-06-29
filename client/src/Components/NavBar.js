@@ -1,7 +1,8 @@
+import Profile from './Profile'
 import React, { Component } from "react"
 import { Button, Menu, Segment } from "semantic-ui-react"
 import Login from './Login';
-import { Link, Redirect } from 'react-router-dom'
+import { Link, Redirect, Route } from 'react-router-dom'
 import jwtDecode from 'jwt-decode'
 
 const loginURL = 'https://chok-database.herokuapp.com/auth/login'
@@ -45,6 +46,7 @@ export default class NavBar extends Component {
         this.setState({
           loggedIn: !this.state.loggedIn
         })
+        window.location.href = '/profile' 
       } else {
           alert(result.error)
       }
@@ -57,9 +59,9 @@ export default class NavBar extends Component {
   }
 
   render() {
-    if(this.state.loggedIn) {
-      return <Redirect to='/profile'/>
-    }
+    // if(this.state.loggedIn) {
+    //   return <Redirect to='/profile'/>
+    // }
 
     const token = window.localStorage.token
 
