@@ -16,7 +16,7 @@ export default class NavBar extends Component {
   }
 
 changeButtons = () => {
-  const location = window.location.pathname.split('/')
+  const location = window.location.pathname
   if(location !== '/') {
     this.setState({
       home: !this.state.home
@@ -65,7 +65,7 @@ changeButtons = () => {
             <Login  loginEmail={this.state.loginEmail}
                     loginPassword={this.state.loginPassword}
                     handleChange={this.handleChange}
-                    handleSubmit={this.state.handleSubmit} />
+                    handleSubmit={this.handleSubmit} />
           </div> :
           <Link to='/'><Button>Logout</Button></Link> }
           </Menu>
