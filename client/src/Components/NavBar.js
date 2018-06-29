@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Button, Modal, Form, Menu, Segment } from "semantic-ui-react"
 import Login from './Login';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import jwtDecode from 'jwt-decode'
 
 const loginURL = 'https://chok-database.herokuapp.com/auth/login'
@@ -12,18 +12,10 @@ export default class NavBar extends Component {
     this.state = {
       loginEmail: '',
       loginPassword: '',
-      home: true
+      loggedIn: false
     }
   }
 
-changeButtons = () => {
-  const location = window.location.pathname
-  if(location !== '/') {
-    this.setState({
-      home: !this.state.home
-    })
-  }
-}
 
   handleChange = (event) => {
     const value = event.target.value
@@ -50,7 +42,9 @@ changeButtons = () => {
         window.localStorage.token = result.token
         let decodedToken = jwtDecode(result.token)
         this.props.updateUserID(decodedToken.userId)
-        window.location.href = '/profile'
+        this.setState({
+          loggedIn: !this.state.loggedIn
+        })
       } else {
           alert(result.error)
       }
@@ -58,19 +52,21 @@ changeButtons = () => {
   }
 
   render() {
-    const home = this.state.home
+    if(this.state.loggedIn) {
+      return <Redirect to='/profile'/>
+    }
+
     return ( 
       <Segment inverted>
         <Menu className="nav-bar" inverted secondary>
-          {home ?
           <div>
           <Link to='/newProfile'><Button>Sign Up</Button></Link>
             <Login  loginEmail={this.state.loginEmail}
                     loginPassword={this.state.loginPassword}
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit} />
-          </div> :
-          <Link to='/'><Button>Logout</Button></Link> }
+          </div> 
+          <Link to='/'><Button>Logout</Button></Link> 
           </Menu>
           <img className="main-logo" src="./assets/bettership2.png" alt="logo" />
         </Segment>

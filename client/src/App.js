@@ -19,8 +19,7 @@ class App extends Component {
       userData: [],
       internshipData: [],
       userId: '',
-      signedUp: false,
-      loggedIn: false
+      signedUp: false
     }
   }
 

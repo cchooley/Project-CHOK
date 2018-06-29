@@ -11,6 +11,9 @@ export default class InternshipList extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    this.setState({
+      internship_id: event.target.key
+    })
     
   }
 
