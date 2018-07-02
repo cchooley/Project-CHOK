@@ -21,7 +21,7 @@ Bettership partners with schools and institutions to list internship opportuniti
 
 ## Team
 
-[Conor Hooley](https://github.com/cchooley)
-[Hayley Zulkoski](https://github.com/hayz999)
-[Kyle Kuberra](https://github.com/kkuberra)
-[Onder Gunacan](https://github.com/Gunacan)
+- [Conor Hooley](https://github.com/cchooley)
+- [Hayley Zulkoski](https://github.com/hayz999)
+- [Kyle Kuberra](https://github.com/kkuberra)
+- [Onder Gunacan](https://github.com/Gunacan)
