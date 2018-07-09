@@ -31,7 +31,7 @@ Run `npm start` to serve locally.
 
 ## Team
 
-- [Conor Hooley](https://github.com/cchooley)
+### [Conor Hooley](https://github.com/cchooley) 
 ##### https://www.linkedin.com/in/conor-hooley/
 ---
 - [Hayley Zulkoski](https://github.com/hayz999)
