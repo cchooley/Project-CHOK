@@ -10,6 +10,9 @@ Bettership partners with schools and institutions to list internship opportuniti
 Run `npm install` to install dependencies.
 
 ## Serving
+
+Run `npm start` to serve locally.
+
 ## Tech Used
 - React
 - Express
@@ -29,6 +32,7 @@ Run `npm install` to install dependencies.
 ## Team
 
 - [Conor Hooley](https://github.com/cchooley)
+### https://www.linkedin.com/in/conor-hooley/
 - [Hayley Zulkoski](https://github.com/hayz999)
 - [Kyle Kuberra](https://github.com/kkuberra)
 - [Onder Gunacan](https://github.com/Gunacan)
