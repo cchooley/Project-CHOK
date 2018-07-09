@@ -34,8 +34,11 @@ Run `npm start` to serve locally.
 ### [Conor Hooley](https://github.com/cchooley) 
 ##### https://www.linkedin.com/in/conor-hooley/
 ---
-- [Hayley Zulkoski](https://github.com/hayz999)
+### [Hayley Zulkoski](https://github.com/hayz999)
+##### https://www.linkedin.com/in/hayley-zulkoski-webdev/
 ---
-- [Kyle Kuberra](https://github.com/kkuberra)
+### [Kyle Kuberra](https://github.com/kkuberra)
+##### https://www.linkedin.com/in/kkuberra/
 ---
-- [Onder Gunacan](https://github.com/Gunacan)
+### [Onder Gunacan](https://github.com/Gunacan)
+##### https://www.linkedin.com/in/onder-gunacan/
